@@ -1,0 +1,87 @@
+
+======================================================================
+SNN Sequential PC-Only Model Training Started: 2026-01-11 04:23:01
+Log file: outputs/snn_sequential_pc_20260111_042301.log
+======================================================================
+
+
+📊 Sequential PC-Only SNN Architecture:
+==================================================
+   Input: 32 neurons (PC bits only)
+   Hidden: 16 LIF neurons
+   Output: 2 LIF neurons
+   Parameters: 562
+   Memory: Maintains neuron state across predictions
+✓ Sequential training functions defined
+   These functions maintain neuron state across batches
+
+======================================================================
+          TRAINING SEQUENTIAL PC-ONLY SNN MODEL
+======================================================================
+Input features: PC bits only (32 neurons)
+Sequence length: 100 batches
+State maintenance: ENABLED (neuron memory across predictions)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.2686 | Train Acc: 88.19% | Test Loss: 1.7543 | Test Acc: 67.05%
+Epoch [ 5/5] | Train Loss: 0.2121 | Train Acc: 91.04% | Test Loss: 1.2334 | Test Acc: 68.53%
+----------------------------------------------------------------------
+✓ Sequential PC-Only Model Training Complete!
+   Best Test Accuracy: 70.72%
+   Final Test Accuracy: 68.53%
+
+======================================================================
+        PC-ONLY: INDEPENDENT vs SEQUENTIAL PROCESSING
+======================================================================
+
+📊 PC-Only Model Comparison:
+----------------------------------------------------------------------
+Approach                       Architecture              Test Accuracy  
+----------------------------------------------------------------------
+Independent Processing         Standard SNN               63.69%
+Sequential Processing          Sequential SNN             68.53%
+----------------------------------------------------------------------
+
+🎯 Impact of SNN Memory:
+   Independent (no memory): 63.69%
+   Sequential (with memory): 68.53%
+   Improvement: +4.84% (4.84% better)
+
+✓ Sequential processing improves accuracy!
+  SNN memory helps learn temporal patterns in PC-based branches
+
+💡 Key Insight:
+   Sequential processing leverages SNN's inherent memory
+   Neuron states carry information between predictions
+   This is unique to SNNs - ANNs would need RNN/LSTM layers
+
+======================================================================
+✓ Comparison saved to 'results/snn_sequential_vs_independent_pc.png'
+✓ Sequential PC-Only model saved to 'models/snn_sequential_pc_only.pth'
+
+======================================================================
+               SEQUENTIAL SNN - FINAL SUMMARY
+======================================================================
+
+📊 All PC-Only Models Tested:
+----------------------------------------------------------------------
+1. Independent SNN (PC):        63.69%
+2. Sequential SNN (PC):         68.53%
+   Difference:                   +4.84%
+
+🧠 What We Learned:
+   ✓ Sequential data handling implemented (no shuffling)
+   ✓ Sequential SNN leverages neuron memory
+   ✓ State maintained across {sequence_length} batches
+   ✓ Temporal patterns in branch execution captured
+
+🎯 SNN Advantages Demonstrated:
+   • Inherent memory through membrane potentials
+   • No need for explicit RNN/LSTM layers
+   • Biologically plausible temporal processing
+   • Event-driven computation potential
+
+======================================================================
+
+======================================================================
+Training Session Ended: 2026-01-11 04:25:57
+======================================================================

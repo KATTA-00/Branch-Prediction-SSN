@@ -1,0 +1,90 @@
+
+======================================================================
+SNN Branch History-Only Model Training Started: 2026-01-11 06:35:28
+Log file: outputs/snn_bh_only_20260111_063528.log
+======================================================================
+
+Branch History-Only Dataset:
+  Training shape: (255362, 32)
+  Test shape: (63841, 32)
+  Training batches: 1996
+  Test batches: 499
+
+📊 Branch History-Only SNN Architecture:
+==================================================
+   Input: 32 neurons (Branch History bits only)
+   Hidden: 16 LIF neurons
+   Output: 2 LIF neurons
+   Parameters: 562
+
+======================================================================
+             TRAINING BRANCH HISTORY-ONLY SNN MODEL
+======================================================================
+Input features: Branch History bits only (32 neurons)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.0687 | Train Acc: 97.82% | Test Loss: 0.0012 | Test Acc: 100.00%
+Epoch [ 5/5] | Train Loss: 0.0001 | Train Acc: 99.99% | Test Loss: 0.0000 | Test Acc: 100.00%
+----------------------------------------------------------------------
+✓ Branch History-Only Model Training Complete!
+   Best Test Accuracy: 100.00%
+   Final Test Accuracy: 100.00%
+data/branch_data_processed_01.csv
+
+======================================================================
+               FEATURE ABLATION STUDY - RESULTS
+======================================================================
+
+📊 Model Comparison:
+----------------------------------------------------------------------
+Model                          Input Features       Test Accuracy  
+----------------------------------------------------------------------
+Full Model (PC + BH)           64 neurons           100.00%
+PC-Only Model                  32 neurons            84.60%
+Branch History-Only Model      32 neurons           100.00%
+----------------------------------------------------------------------
+
+🔍 Feature Importance Analysis:
+   Full Model Accuracy: 100.00%
+   PC Contribution: 84.60%
+   Branch History Contribution: 100.00%
+   Synergy (Full - Max(PC, BH)): 0.00%
+
+💡 Branch History bits are more predictive (100.00% vs 84.60%)
+
+======================================================================
+✓ Feature ablation comparison saved to 'results/snn_feature_ablation_comparison.png'
+✓ Sequential SNN model defined
+   This model can maintain neuron state across predictions
+   Useful for learning temporal patterns in branch execution
+======================================================================
+            SEQUENTIAL vs INDEPENDENT PROCESSING
+======================================================================
+
+🔄 Current Approach (Independent):
+   • Each branch prediction resets neuron state
+   • No memory of previous branches
+   • Branch history in input is the only temporal info
+   • Treats branches as i.i.d. samples
+
+🧠 Sequential Approach (with SNN Memory):
+   • Neuron states carry over between predictions
+   • Network 'remembers' recent branch patterns
+   • Leverages SNN's inherent temporal dynamics
+   • More realistic for actual CPU execution
+
+💡 Why This Matters for Branch Prediction:
+   • Branches follow execution flow patterns
+   • Loop branches repeat regularly
+   • Function call patterns are predictable
+   • Context from recent branches improves accuracy
+
+📊 Dataset Structure:
+   Total samples: 319,203
+   These are sequential branch decisions from CPU execution
+   Order matters - shuffling destroys temporal patterns!
+
+✓ Fixed: Now using sequential split (80/20)
+✓ Fixed: Disabled shuffling in DataLoaders
+✓ Next: Train sequential model to leverage SNN memory
+
+======================================================================

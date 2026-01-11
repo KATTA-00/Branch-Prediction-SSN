@@ -1,0 +1,31 @@
+
+======================================================================
+SNN PC-Only Model Training Started: 2026-01-11 06:32:45
+Log file: outputs/snn_pc_only_20260111_063245.log
+======================================================================
+
+PC-Only Dataset:
+  Training shape: (255362, 32)
+  Test shape: (63841, 32)
+  Training batches: 1996
+  Test batches: 499
+
+📊 PC-Only SNN Architecture:
+==================================================
+   Input: 32 neurons (PC bits only)
+   Hidden: 16 LIF neurons
+   Output: 2 LIF neurons
+   Parameters: 562
+
+======================================================================
+                  TRAINING PC-ONLY SNN MODEL
+======================================================================
+Input features: PC bits only (32 neurons)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.2427 | Train Acc: 87.06% | Test Loss: 0.8734 | Test Acc: 81.77%
+Epoch [ 5/5] | Train Loss: 0.1933 | Train Acc: 88.78% | Test Loss: 0.7050 | Test Acc: 84.60%
+----------------------------------------------------------------------
+✓ PC-Only Model Training Complete!
+   Best Test Accuracy: 84.60%
+   Final Test Accuracy: 84.60%
+data/branch_data_processed_01.csv

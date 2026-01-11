@@ -1,0 +1,28 @@
+======================================================================
+SNN Training Session Started: 2026-01-11 04:13:21
+Log file: outputs/snn_full_model_20260111_041321.log
+======================================================================
+
+Loading dataset: data/branch_data_processed.csv
+
+✓ Dataset loaded successfully!
+Shape: (350783, 65)
+Columns: 65
+
+First few rows:
+Features shape: (350783, 64)
+Target shape: (350783,)
+
+Target distribution:
+  Not Taken (0): 153,486 (43.76%)
+  Taken (1): 197,297 (56.24%)
+✓ Sequential split (maintains execution order)
+Training set size: 280,626 (first 80%)
+Test set size: 70,157 (last 20%)
+  y_train: torch.Size([280626])
+
+Tensor shapes:
+  X_train: torch.Size([280626, 64])
+Batch size: 128
+Training batches: 2193
+Test batches: 549

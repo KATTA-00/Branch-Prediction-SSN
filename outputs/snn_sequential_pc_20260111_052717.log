@@ -1,0 +1,30 @@
+
+======================================================================
+SNN Sequential PC-Only Model Training Started: 2026-01-11 05:27:17
+Log file: outputs/snn_sequential_pc_20260111_052717.log
+======================================================================
+
+
+📊 Sequential PC-Only SNN Architecture:
+==================================================
+   Input: 32 neurons (PC bits only)
+   Hidden: 16 LIF neurons
+   Output: 2 LIF neurons
+   Parameters: 562
+   Memory: Maintains neuron state across predictions
+✓ Sequential training functions defined
+   These functions maintain neuron state across batches
+
+======================================================================
+          TRAINING SEQUENTIAL PC-ONLY SNN MODEL
+======================================================================
+Input features: PC bits only (32 neurons)
+Sequence length: 20 batches
+State maintenance: ENABLED (neuron memory across predictions)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.3392 | Train Acc: 79.72% | Test Loss: 1.1373 | Test Acc: 66.98%
+Epoch [ 5/5] | Train Loss: 0.3993 | Train Acc: 73.12% | Test Loss: 1.2945 | Test Acc: 56.89%
+----------------------------------------------------------------------
+✓ Sequential PC-Only Model Training Complete!
+   Best Test Accuracy: 66.98%
+   Final Test Accuracy: 56.89%

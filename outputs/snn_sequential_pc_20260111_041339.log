@@ -1,0 +1,41 @@
+
+======================================================================
+SNN Sequential PC-Only Model Training Started: 2026-01-11 04:13:39
+Log file: outputs/snn_sequential_pc_20260111_041339.log
+======================================================================
+
+✓ Sequential SNN model defined
+   This model can maintain neuron state across predictions
+   Useful for learning temporal patterns in branch execution
+======================================================================
+            SEQUENTIAL vs INDEPENDENT PROCESSING
+======================================================================
+
+🔄 Current Approach (Independent):
+   • Each branch prediction resets neuron state
+   • No memory of previous branches
+   • Branch history in input is the only temporal info
+   • Treats branches as i.i.d. samples
+
+🧠 Sequential Approach (with SNN Memory):
+   • Neuron states carry over between predictions
+   • Network 'remembers' recent branch patterns
+   • Leverages SNN's inherent temporal dynamics
+   • More realistic for actual CPU execution
+
+💡 Why This Matters for Branch Prediction:
+   • Branches follow execution flow patterns
+   • Loop branches repeat regularly
+   • Function call patterns are predictable
+   • Context from recent branches improves accuracy
+
+📊 Dataset Structure:
+   Total samples: 350,783
+   These are sequential branch decisions from CPU execution
+   Order matters - shuffling destroys temporal patterns!
+
+✓ Fixed: Now using sequential split (80/20)
+✓ Fixed: Disabled shuffling in DataLoaders
+✓ Next: Train sequential model to leverage SNN memory
+
+======================================================================
