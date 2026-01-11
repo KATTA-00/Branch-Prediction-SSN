@@ -1,0 +1,118 @@
+======================================================================
+SNN Training Session Started: 2026-01-11 03:49:33
+Log file: outputs/snn_full_model_20260111_034933.log
+======================================================================
+
+Loading dataset: data/branch_data_processed.csv
+
+✓ Dataset loaded successfully!
+Shape: (350783, 65)
+Columns: 65
+
+First few rows:
+Features shape: (350783, 64)
+Target shape: (350783,)
+
+Target distribution:
+  Not Taken (0): 153,486 (43.76%)
+  Taken (1): 197,297 (56.24%)
+✓ Sequential split (maintains execution order)
+Training set size: 280,626 (first 80%)
+Test set size: 70,157 (last 20%)
+  y_train: torch.Size([280626])
+
+Tensor shapes:
+  X_train: torch.Size([280626, 64])
+Batch size: 128
+Training batches: 2193
+Test batches: 549
+Spiking Neural Network Architecture:
+==================================================
+SpikingNeuralNetwork(
+  (fc1): Linear(in_features=64, out_features=16, bias=True)
+  (lif1): Leaky()
+  (fc2): Linear(in_features=16, out_features=2, bias=True)
+  (lif2): Leaky()
+)
+
+Total parameters: 1,074
+Loss function: Cross Entropy Count Loss (based on spike counts)
+Optimizer: Adam (lr=0.001, weight_decay=1e-5)
+Scheduler: ReduceLROnPlateau (factor=0.5, patience=3)
+✓ Training and evaluation functions defined!
+======================================================================
+                    TRAINING SPIKING NEURAL NETWORK
+======================================================================
+
+Epochs: 5
+Batch size: 128
+Timesteps: 25
+
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.0322 | Train Acc: 97.51% | Test Loss: 0.0001 | Test Acc: 100.00%
+Epoch [ 2/5] | Train Loss: 0.0008 | Train Acc: 99.99% | Test Loss: 0.0000 | Test Acc: 100.00%
+Epoch [ 3/5] | Train Loss: 0.0009 | Train Acc: 99.98% | Test Loss: 0.0000 | Test Acc: 100.00%
+Epoch [ 4/5] | Train Loss: 0.0004 | Train Acc: 99.99% | Test Loss: 0.0001 | Test Acc: 100.00%
+Epoch [ 5/5] | Train Loss: 0.0016 | Train Acc: 99.97% | Test Loss: 0.0000 | Test Acc: 100.00%
+----------------------------------------------------------------------
+
+✓ Training complete!
+Best Test Accuracy: 100.00%
+✓ Training history saved to 'results/snn_training_history.png'
+Running final inference on test set...
+
+======================================================================
+                    INFERENCE RESULTS
+======================================================================
+
+🎯 Test Accuracy: 100.00%
+📉 Test Loss: 0.0000
+
+📊 Classification Report:
+--------------------------------------------------
+              precision    recall  f1-score   support
+
+   Not Taken       1.00      1.00      1.00     31742
+       Taken       1.00      1.00      1.00     38415
+
+    accuracy                           1.00     70157
+   macro avg       1.00      1.00      1.00     70157
+weighted avg       1.00      1.00      1.00     70157
+
+✓ Confusion matrix saved to 'snn_confusion_matrix.png'
+✓ Spike activity visualization saved to 'results/snn_spike_activity.png'
+======================================================================
+               SPIKING NEURAL NETWORK - SUMMARY
+======================================================================
+
+📊 Network Architecture:
+   Input Layer: 64 neurons (32 PC + 32 Branch History bits)
+   Hidden Layer: 16 LIF neurons
+   Output Layer: 2 LIF neurons (Taken / Not Taken)
+   Total Parameters: 1,074
+
+⚙️ Training Configuration:
+   Epochs: 5
+   Batch Size: 128
+   Timesteps: 25
+   Learning Rate: 0.001
+   Beta (membrane decay): 0.95
+
+📈 Dataset:
+   Training samples: 280,626
+   Test samples: 70,157
+
+🎯 Final Results:
+   Training Accuracy: 99.97%
+   Test Accuracy: 100.00%
+   Best Test Accuracy: 100.00%
+
+💾 Saved Files:
+   Model: models/snn_branch_predictor.pth
+   Training History: results/snn_training_history.png
+   Confusion Matrix: results/snn_confusion_matrix.png
+   Spike Activity: results/snn_spike_activity.png
+
+======================================================================
+✓ Implementation complete! SNN model trained successfully.
+======================================================================

@@ -1,0 +1,51 @@
+======================================================================
+SNN Training Session Started: 2026-01-11 03:42:47
+Log file: outputs/snn_full_model_20260111_034247.log
+======================================================================
+
+Loading dataset: data/branch_data_processed.csv
+
+✓ Dataset loaded successfully!
+Shape: (350783, 65)
+Columns: 65
+
+First few rows:
+Features shape: (350783, 64)
+Target shape: (350783,)
+
+Target distribution:
+  Not Taken (0): 153,486 (43.76%)
+  Taken (1): 197,297 (56.24%)
+✓ Sequential split (maintains execution order)
+Training set size: 280,626 (first 80%)
+Test set size: 70,157 (last 20%)
+  y_train: torch.Size([280626])
+
+Tensor shapes:
+  X_train: torch.Size([280626, 64])
+Batch size: 128
+Training batches: 2193
+Test batches: 549
+Spiking Neural Network Architecture:
+==================================================
+SpikingNeuralNetwork(
+  (fc1): Linear(in_features=64, out_features=16, bias=True)
+  (lif1): Leaky()
+  (fc2): Linear(in_features=16, out_features=2, bias=True)
+  (lif2): Leaky()
+)
+
+Total parameters: 1,074
+Loss function: Cross Entropy Count Loss (based on spike counts)
+Optimizer: Adam (lr=0.001, weight_decay=1e-5)
+Scheduler: ReduceLROnPlateau (factor=0.5, patience=3)
+✓ Training and evaluation functions defined!
+======================================================================
+                    TRAINING SPIKING NEURAL NETWORK
+======================================================================
+
+Epochs: 5
+Batch size: 128
+Timesteps: 25
+
+----------------------------------------------------------------------

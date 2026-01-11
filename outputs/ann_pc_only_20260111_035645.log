@@ -1,0 +1,30 @@
+
+======================================================================
+ANN PC-Only Model Training Started: 2026-01-11 03:56:45
+Log file: outputs/ann_pc_only_20260111_035645.log
+======================================================================
+
+PC-Only Dataset:
+  Training shape: (280626, 32)
+  Test shape: (70157, 32)
+  Training batches: 2193
+  Test batches: 549
+
+📊 PC-Only ANN Architecture:
+==================================================
+   Input: 32 neurons (PC bits only)
+   Hidden: 16 neurons (BatchNorm + ReLU + Dropout)
+   Output: 2 neurons
+   Parameters: 594
+
+======================================================================
+                  TRAINING PC-ONLY ANN MODEL
+======================================================================
+Input features: PC bits only (32 neurons)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.2857 | Train Acc: 88.11% | Test Loss: 1.5074 | Test Acc: 66.76%
+Epoch [ 5/5] | Train Loss: 0.2132 | Train Acc: 92.72% | Test Loss: 5.8811 | Test Acc: 62.51%
+----------------------------------------------------------------------
+✓ PC-Only Model Training Complete!
+   Best Test Accuracy: 67.58%
+   Final Test Accuracy: 62.51%

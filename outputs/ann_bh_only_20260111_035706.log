@@ -1,0 +1,60 @@
+
+======================================================================
+ANN Branch History-Only Model Training Started: 2026-01-11 03:57:06
+Log file: outputs/ann_bh_only_20260111_035706.log
+======================================================================
+
+Branch History-Only Dataset:
+  Training shape: (280626, 32)
+  Test shape: (70157, 32)
+  Training batches: 2193
+  Test batches: 549
+
+📊 Branch History-Only ANN Architecture:
+==================================================
+   Input: 32 neurons (Branch History bits only)
+   Hidden: 16 neurons (BatchNorm + ReLU + Dropout)
+   Output: 2 neurons
+   Parameters: 594
+
+======================================================================
+             TRAINING BRANCH HISTORY-ONLY ANN MODEL
+======================================================================
+Input features: Branch History bits only (32 neurons)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.0514 | Train Acc: 98.39% | Test Loss: 0.0001 | Test Acc: 100.00%
+Epoch [ 5/5] | Train Loss: 0.0010 | Train Acc: 99.98% | Test Loss: 0.0000 | Test Acc: 100.00%
+----------------------------------------------------------------------
+✓ Branch History-Only Model Training Complete!
+   Best Test Accuracy: 100.00%
+   Final Test Accuracy: 100.00%
+
+======================================================================
+               FEATURE ABLATION STUDY - RESULTS
+======================================================================
+
+📊 Model Comparison:
+----------------------------------------------------------------------
+Model                          Input Features       Test Accuracy  
+----------------------------------------------------------------------
+Full Model (PC + BH)           64 neurons           100.00%
+PC-Only Model                  32 neurons            62.51%
+Branch History-Only Model      32 neurons           100.00%
+----------------------------------------------------------------------
+
+🔍 Feature Importance Analysis:
+   Full Model Accuracy: 100.00%
+   PC Contribution: 62.51%
+   Branch History Contribution: 100.00%
+   Synergy (Full - Max(PC, BH)): 0.00%
+
+💡 Branch History bits are more predictive (100.00% vs 62.51%)
+
+======================================================================
+✓ Feature ablation comparison saved to 'results/ann_feature_ablation_comparison.png'
+✓ PC-Only model saved to 'models/ann_pc_only.pth'
+✓ Branch History-Only model saved to 'models/ann_bh_only.pth'
+
+======================================================================
+Training Session Ended: 2026-01-11 03:57:28
+======================================================================

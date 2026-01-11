@@ -1,0 +1,34 @@
+
+======================================================================
+SNN Branch History-Only Model Training Started: 2026-01-11 03:55:29
+Log file: outputs/snn_bh_only_20260111_035529.log
+======================================================================
+
+Branch History-Only Dataset:
+  Training shape: (280626, 32)
+  Test shape: (70157, 32)
+  Training batches: 2193
+  Test batches: 549
+
+📊 Branch History-Only SNN Architecture:
+==================================================
+   Input: 32 neurons (Branch History bits only)
+   Hidden: 16 LIF neurons
+   Output: 2 LIF neurons
+   Parameters: 562
+
+======================================================================
+             TRAINING BRANCH HISTORY-ONLY SNN MODEL
+======================================================================
+Input features: Branch History bits only (32 neurons)
+----------------------------------------------------------------------
+Epoch [ 1/5] | Train Loss: 0.1474 | Train Acc: 83.79% | Test Loss: 0.0004 | Test Acc: 100.00%
+Epoch [ 5/5] | Train Loss: 0.0001 | Train Acc: 99.99% | Test Loss: 0.0000 | Test Acc: 100.00%
+----------------------------------------------------------------------
+✓ Branch History-Only Model Training Complete!
+   Best Test Accuracy: 100.00%
+   Final Test Accuracy: 100.00%
+
+======================================================================
+               FEATURE ABLATION STUDY - RESULTS
+======================================================================
